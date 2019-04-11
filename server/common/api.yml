@@ -21,10 +21,22 @@ definitions:
     type: object
     title: example
     required:
-      - name
+      - email
+      - firstName
+      - lastName
+      - age
     properties:
-      name:
+      email:
         type: string
+        example: no_stress
+      firstName:
+        type: string
+        example: no_stress
+      lastName:
+        type: string
+        example: no_stress
+      age:
+        type: integer
         example: no_stress
 
 paths:
@@ -45,7 +57,7 @@ paths:
           in: body
           description: an example
           required: true
-          schema: 
+          schema:
             $ref: "#/definitions/ExampleBody"
       responses:
         200:

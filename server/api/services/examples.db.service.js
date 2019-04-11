@@ -1,30 +1,29 @@
+const Sequelize = require('sequelize');
+const PersonModel = require('../models/person');
+
+const sequelize = new Sequelize('colorcodeddb', 'testuser', 'test1234', {
+  host: 'colorcodedworkshop.ccwzufwojjut.us-west-1.rds.amazonaws.com',
+  dialect: 'mysql',
+});
+
+const Person = PersonModel(sequelize, Sequelize);
+
+sequelize.sync({ force: true })
+  .then(() => {
+    console.log('Database & tables created!');
+  });
+
 class ExamplesDatabase {
-  constructor() {
-    this._data = [];
-    this._counter = 0;
-
-    this.insert('example 0');
-    this.insert('example 1');
-  }
-
   all() {
-    return Promise.resolve(this._data);
+    return Person.findAll();
   }
 
   byId(id) {
-    return Promise.resolve(this._data[id]);
+    return Person.findOne({ where: { id } });
   }
 
-  insert(name) {
-    const record = {
-      id: this._counter,
-      name,
-    };
-
-    this._counter += 1;
-    this._data.push(record);
-
-    return Promise.resolve(record);
+  insert(object) {
+    return Person.create(object);
   }
 }
 
