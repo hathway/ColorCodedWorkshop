@@ -1,6 +1,6 @@
-# express-backend
+# Color Coded API Backend Workshop
 
-My test backend
+This repository contains the code exercise that Cal Poly's Color Coded club went through in the hands-on workshop on April 11th, 2019. It serves as a reference to help people follow along with the presentation that was posted to the group's Facebook page. 
 
 ## Get Started
 
