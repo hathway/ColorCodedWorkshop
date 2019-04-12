@@ -8,7 +8,7 @@ const sequelize = new Sequelize('colorcodeddb', 'testuser', 'test1234', {
 
 const Person = PersonModel(sequelize, Sequelize);
 
-sequelize.sync({ force: true })
+sequelize.sync({ force: false })
   .then(() => {
     console.log('Database & tables created!');
   });
