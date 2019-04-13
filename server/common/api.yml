@@ -28,16 +28,16 @@ definitions:
     properties:
       email:
         type: string
-        example: no_stress
+        example: test@email.com
       firstName:
         type: string
-        example: no_stress
+        example: First
       lastName:
         type: string
-        example: no_stress
+        example: Last
       age:
         type: integer
-        example: no_stress
+        example: 21
 
 paths:
   /examples:
